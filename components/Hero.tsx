@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useTypewriter, useCounter, useReveal } from './hooks';
 import { Code2, Zap, Layers, FolderOpen, Download, Sparkles } from 'lucide-react';
 
@@ -148,7 +149,9 @@ export default function Hero() {
                 background: 'radial-gradient(circle, rgba(99,102,241,0.4) 0%, transparent 70%)',
                 filter: 'blur(30px)'
               }} />
-              <img
+              <Image
+                width={1}
+                height={1}
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop"
                 alt="Profile"
                 style={{
