@@ -149,19 +149,16 @@ export default function Hero() {
                 background: 'radial-gradient(circle, rgba(99,102,241,0.4) 0%, transparent 70%)',
                 filter: 'blur(30px)'
               }} />
-              <Image
-                width={1}
-                height={1}
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop"
-                alt="Profile"
-                style={{
-                  position: 'relative', zIndex: 1,
-                  width: '100%', height: '100%', objectFit: 'cover',
-                  borderRadius: '50%',
-                  border: '6px solid var(--bg)',
-                  boxShadow: '0 0 0 1px var(--border-a), 0 32px 64px rgba(0,0,0,0.5)'
-                }}
-              />
+              <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '100%', borderRadius: '50%', overflow: 'hidden', border: '6px solid var(--bg)', boxShadow: '0 0 0 1px var(--border-a), 0 32px 64px rgba(0,0,0,0.5)' }}>
+                <Image
+                  fill
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop"
+                  alt="Profile"
+                  style={{ objectFit: 'cover' }}
+                  sizes="380px"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Floating cards */}

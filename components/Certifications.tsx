@@ -42,7 +42,9 @@ export default function Certifications() {
             >
               <div style={{ height: 160, background: 'rgba(255,255,255,0.02)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--border-a)' }}>
                 {cert.image && !cert.image.includes('webp') ? (
-                  <Image width={1} height={1} src={cert.image} alt={cert.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <Image fill src={cert.image} alt={cert.title} style={{ objectFit: 'cover' }} sizes="400px" />
+                  </div>
                 ) : (
                   <Award size={48} style={{ color: 'var(--accent)', opacity: 0.5 }} />
                 )}

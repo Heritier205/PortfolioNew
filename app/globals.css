@@ -57,6 +57,18 @@ html.light {
 }
 html { scroll-behavior: smooth; }
 
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(99,102,241,0.35);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(99,102,241,0.6); }
+
+/* Selection */
+::selection { background: rgba(99,102,241,0.3); color: var(--t1); }
+
 body {
   font-family: var(--ff-b);
   background: var(--bg);
@@ -71,10 +83,13 @@ h1, h2, h3, h4 {
   font-family: var(--ff-d);
   font-weight: 700;
   line-height: 1.15;
+  text-wrap: pretty;
 }
 img   { display: block; max-width: 100%; }
 a     { text-decoration: none; color: inherit; }
 button { border: none; background: none; font-family: inherit; font-size: inherit; cursor: pointer; }
+select { color-scheme: dark; }
+html.light select { color-scheme: light; }
 
 /* ─── LAYOUT ─────────────────────────────────────────────────── */
 .container {
@@ -305,4 +320,8 @@ section {
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50%       { background-position: 100% 50%; }
+}
+@keyframes pulseGlow {
+  0%   { opacity: .2; transform: scale(1); }
+  100% { opacity: .5; transform: scale(1.04); }
 }

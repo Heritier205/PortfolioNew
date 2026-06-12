@@ -45,20 +45,17 @@ export default function About() {
             }} />
 
             <div style={{ position: 'relative', zIndex: 1, borderRadius: 'var(--radius-lg)', overflow: 'hidden', border: '1px solid var(--border-a)' }}>
-              <Image
-                src={about.image}
-                alt="Profile"
-                width={1}
-                height={1}
-                style={{
-                  width: '100%',
-                  aspectRatio: '3/4', objectFit: 'cover',
-                  transform: 'scale(1.02)',
-                  transition: 'transform 0.5s ease',
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-                onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
-              />
+              <div style={{ position: 'relative', width: '100%', aspectRatio: '3/4' }}>
+                <Image
+                  fill
+                  src={about.image}
+                  alt="Profile"
+                  style={{ objectFit: 'cover', transform: 'scale(1.02)', transition: 'transform 0.5s ease' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+                />
+              </div>
             </div>
 
             {/* Experience Badge */}

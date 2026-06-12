@@ -21,8 +21,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Développeur Fullstack",
-  description: "Portfolio professionnel d'un développeur fullstack passionné par le design et la performance.",
+  title: "Heritier K. — Développeur Fullstack & UI/UX",
+  description: "Portfolio de Heritier K., développeur fullstack passionné par les expériences numériques haute performance. Disponible pour vos projets depuis Lomé, Togo.",
+  keywords: ["développeur fullstack", "React", "Next.js", "Node.js", "UI/UX", "Togo", "Lomé"],
+  authors: [{ name: "Heritier K." }],
+  creator: "Heritier K.",
 };
 
 export default function RootLayout({

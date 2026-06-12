@@ -1,20 +1,49 @@
 'use client';
 
-import { Code, Share2, MessageCircle } from 'lucide-react';
+import { Code2, Link2, MessageCircle } from 'lucide-react';
+
+const socials = [
+  { Icon: Code2,          href: '#', label: 'GitHub'   },
+  { Icon: Link2,          href: '#', label: 'LinkedIn'  },
+  { Icon: MessageCircle,  href: '#', label: 'Twitter'   },
+];
 
 export default function SideSocial() {
   return (
-    <div className="side-social fixed left-8 bottom-0 flex flex-col items-center gap-4 z-[100]">
-      <a href="#" className="side-icon w-8.5 h-8.5 flex items-center justify-center text-[var(--t3)] rounded-lg transition-all hover:text-[var(--accent)] hover:-translate-y-1">
-        <Code size={16} />
-      </a>
-      <a href="#" className="side-icon w-8.5 h-8.5 flex items-center justify-center text-[var(--t3)] rounded-lg transition-all hover:text-[var(--accent)] hover:-translate-y-1">
-        <Share2 size={16} />
-      </a>
-      <a href="#" className="side-icon w-8.5 h-8.5 flex items-center justify-center text-[var(--t3)] rounded-lg transition-all hover:text-[var(--accent)] hover:-translate-y-1">
-        <MessageCircle size={16} />
-      </a>
-      <div className="side-line w-px h-20 bg-[linear-gradient(to_bottom,var(--border),transparent)]" />
+    <div style={{
+      position: 'fixed', left: 28, bottom: 0,
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
+      gap: 16, zIndex: 100,
+    }}>
+      {socials.map(({ Icon, href, label }) => (
+        <a
+          key={label}
+          href={href}
+          aria-label={label}
+          style={{
+            width: 34, height: 34,
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            color: 'var(--t3)',
+            borderRadius: 8,
+            transition: 'color .25s var(--ease), transform .25s var(--ease)',
+          }}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLElement).style.color = 'var(--accent)';
+            (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)';
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLElement).style.color = 'var(--t3)';
+            (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+          }}
+        >
+          <Icon size={16} />
+        </a>
+      ))}
+      {/* Vertical line */}
+      <div style={{
+        width: 1, height: 80,
+        background: 'linear-gradient(to bottom, var(--border), transparent)',
+      }} />
     </div>
   );
 }
